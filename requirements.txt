@@ -1,0 +1,25 @@
+# NoteClaw 依赖 —— 针对 Apple Silicon (macOS, M 系列) + Python 3.10/3.11 验证
+# 注意:basic-pitch 对 Python 版本敏感,请勿使用 Python 3.12+
+
+# --- 深度学习运行时(torch 自带 MPS 支持,无需额外配置)---
+torch>=2.2.0
+torchaudio>=2.2.0
+
+# --- 分轨 ---
+demucs>=4.0.1
+
+# --- 音频转 MIDI ---
+# 使用 onnx 后端:在 Apple Silicon 上比 TensorFlow 更容易安装。
+# basic-pitch 会自动检测可用后端,装了 onnxruntime 即走 onnx。
+basic-pitch[onnx]>=0.4.0
+onnxruntime>=1.16.0
+
+# --- 音频读写 / 重采样 ---
+soundfile>=0.12.1
+librosa>=0.10.1
+
+# --- 本地网页界面 ---
+gradio>=4.0.0
+
+# --- 基础依赖(锁定 numpy<2 以兼容 demucs / basic-pitch)---
+numpy>=1.24,<2.0

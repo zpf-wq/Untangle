@@ -1,0 +1,28 @@
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 输出产物
+out/
+output/
+*.mid
+*_stems/
+
+# Swift / macapp 构建产物
+macapp/.build/
+macapp/*.app
+*.swiftpm
+
+# 测试音频
+test_tone.wav
+
+# 系统 / 编辑器
+.DS_Store
+.idea/
+.vscode/
